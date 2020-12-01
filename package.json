@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Slack app for accessing information and resources about the Bolt framework",
   "scripts": {
-    "start": "npm run build:live",
+    "start": "npm run build && node lib/app.js",
     "build": "tsc -p .",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/app.ts"
   },
@@ -19,15 +19,15 @@
   },
   "homepage": "https://github.com/misscoded/bolt-helper#readme",
   "dependencies": {
+    "@types/node": "^14.14.5",
     "@slack/bolt": "^2.4.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "typescript": "^4.0.5"
   },
   "devDependencies": {
-    "@types/node": "^14.14.5",
     "@typescript-eslint/parser": "^4.6.0",
     "eslint": "^7.12.1",
     "nodemon": "^2.0.6",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.5"
+    "ts-node": "^9.0.0"
   }
 }
